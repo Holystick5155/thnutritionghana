@@ -32,7 +32,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" onClick={close} className="flex items-center gap-3">
             <LogoMark size={150} />
-            <div className="hidden sm:block">
+            <div className="hidden">
               <h1 className="font-serif font-bold text-lg leading-none text-foreground">
                 TB Nutrition
               </h1>

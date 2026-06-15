@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="md:col-span-2 space-y-5">
             <div className="flex items-center gap-4">
               <LogoMark size={150} dark />
-              <div>
+              <div className="hidden">
                 <h2 className="font-serif font-bold text-xl leading-none text-white">TB Nutrition</h2>
                 <p className="text-sm font-medium text-white/70 tracking-widest uppercase">Ghana</p>
               </div>
