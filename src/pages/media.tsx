@@ -2,14 +2,45 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useSEO } from "@/hooks/useSEO";
 import {
-  FileText, Image, Video, Mic, Quote, BookOpen, Presentation, BookMarked, ClipboardList, X, ChevronLeft, ChevronRight,
+  FileText,
+  Image,
+  Video,
+  Mic,
+  Quote,
+  BookOpen,
+  Presentation,
+  BookMarked,
+  ClipboardList,
+  X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import img1 from "@assets/IMG_2183.JPG_1781479894394.jpeg";
 import img2 from "@assets/IMG_2184.JPG_1781479894393.jpeg";
+import img3 from "@assets/boston-team.jpeg";
+import img4 from "@assets/pre-team.jpeg";
 
 const preEventPhotos = [
-  { src: img1, caption: "Workshop Planning Consortium in discussion at the pre-event briefing dinner, Accra." },
-  { src: img2, caption: "National and international partners engaging ahead of the workshop." },
+  {
+    src: img1,
+    caption:
+      "Workshop Planning Consortium in discussion at the pre-event briefing dinner, Accra.",
+  },
+  {
+    src: img2,
+    caption:
+      "National and international partners engaging ahead of the workshop.",
+  },
+  {
+    src: img3,
+    caption:
+      "Boston University team: Tyler Beerley, Dr. Meredith Brooks and Dr. Hayford Avedzi @ Noguchi Advanced Research Lab.",
+  },
+  {
+    src: img4,
+    caption:
+      "Picture taken after a pre-workshop event meeting with the Director of Public Health at the Ghana Health Service (GHS) — Dr. Franklin Asiedu-Bekoe (in smock), and the National TB Control Manager (Dr. Bernard Ziem).",
+  },
 ];
 
 const fadeUp = {
@@ -88,32 +119,51 @@ const resources = [
 export default function Media() {
   useSEO({
     title: "Media Centre | TB Nutrition Ghana",
-    description: "Press resources, photo gallery, and media materials from the TB Nutrition Ghana initiative and the First National Stakeholder Consultation Workshop.",
+    description:
+      "Press resources, photo gallery, and media materials from the TB Nutrition Ghana initiative and the First National Stakeholder Consultation Workshop.",
   });
 
   const [lightbox, setLightbox] = useState<number | null>(null);
 
-  const prev = () => setLightbox((i) => (i === null ? 0 : (i - 1 + preEventPhotos.length) % preEventPhotos.length));
-  const next = () => setLightbox((i) => (i === null ? 0 : (i + 1) % preEventPhotos.length));
+  const prev = () =>
+    setLightbox((i) =>
+      i === null ? 0 : (i - 1 + preEventPhotos.length) % preEventPhotos.length,
+    );
+  const next = () =>
+    setLightbox((i) => (i === null ? 0 : (i + 1) % preEventPhotos.length));
 
   const scrollToGallery = () => {
-    document.getElementById("photo-gallery")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("photo-gallery")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="w-full">
       {/* PAGE HEADER */}
       <section className="relative bg-foreground py-16 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "linear-gradient(30deg, hsl(var(--primary)) 12%, transparent 12.5%, transparent 87%, hsl(var(--primary)) 87.5%, hsl(var(--primary))), linear-gradient(150deg, hsl(var(--primary)) 12%, transparent 12.5%, transparent 87%, hsl(var(--primary)) 87.5%, hsl(var(--primary))), linear-gradient(30deg, hsl(var(--primary)) 12%, transparent 12.5%, transparent 87%, hsl(var(--primary)) 87.5%, hsl(var(--primary)))", backgroundSize: "60px 104px" }} />
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage:
+              "linear-gradient(30deg, hsl(var(--primary)) 12%, transparent 12.5%, transparent 87%, hsl(var(--primary)) 87.5%, hsl(var(--primary))), linear-gradient(150deg, hsl(var(--primary)) 12%, transparent 12.5%, transparent 87%, hsl(var(--primary)) 87.5%, hsl(var(--primary))), linear-gradient(30deg, hsl(var(--primary)) 12%, transparent 12.5%, transparent 87%, hsl(var(--primary)) 87.5%, hsl(var(--primary)))",
+            backgroundSize: "60px 104px",
+          }}
+        />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div {...fadeUp} className="max-w-3xl">
-            <p className="text-accent font-bold uppercase tracking-widest text-sm mb-4">Media Centre</p>
+            <p className="text-accent font-bold uppercase tracking-widest text-sm mb-4">
+              Media Centre
+            </p>
             <h1 className="font-serif text-4xl md:text-6xl font-bold text-white mb-5 md:mb-6 leading-tight">
               Stories. Insights. Impact.
             </h1>
             <div className="w-20 h-1 bg-accent mb-6 md:mb-8" />
             <p className="text-white/70 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
-              Explore workshop highlights, interviews, presentations, reports, photographs, videos, and key resources documenting the national conversation on integrating nutrition support into tuberculosis services in Ghana.
+              Explore workshop highlights, interviews, presentations, reports,
+              photographs, videos, and key resources documenting the national
+              conversation on integrating nutrition support into tuberculosis
+              services in Ghana.
             </p>
           </motion.div>
         </div>
@@ -128,7 +178,9 @@ export default function Media() {
             className="text-center text-sm font-semibold text-foreground"
           >
             <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse mr-2" />
-            The workshop takes place on <strong>18 June 2026</strong>. Media resources will be published progressively before, during, and after the event.
+            The workshop takes place on <strong>18 June 2026</strong>. Media
+            resources will be published progressively before, during, and after
+            the event.
           </motion.p>
         </div>
       </div>
@@ -136,12 +188,20 @@ export default function Media() {
       {/* RESOURCE GRID */}
       <section className="py-14 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
-            <p className="text-primary font-bold uppercase tracking-widest text-sm mb-3">Media Resources</p>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Resource Library</h2>
+          <motion.div
+            {...fadeUp}
+            className="text-center max-w-2xl mx-auto mb-10 md:mb-16"
+          >
+            <p className="text-primary font-bold uppercase tracking-widest text-sm mb-3">
+              Media Resources
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Resource Library
+            </h2>
             <div className="w-16 h-1 bg-primary mx-auto mb-5 md:mb-6" />
             <p className="text-muted-foreground text-sm md:text-base">
-              All resources will be made available here. Subscribe to our updates to be notified when new materials are published.
+              All resources will be made available here. Subscribe to our
+              updates to be notified when new materials are published.
             </p>
           </motion.div>
 
@@ -154,13 +214,19 @@ export default function Media() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
                 className={`rounded-xl border-2 p-5 md:p-6 ${color.split(" ").slice(0, 2).join(" ")} hover:shadow-lg transition-all group ${title === "Photo Gallery" ? "cursor-pointer" : "cursor-default"}`}
-                onClick={title === "Photo Gallery" ? scrollToGallery : undefined}
+                onClick={
+                  title === "Photo Gallery" ? scrollToGallery : undefined
+                }
               >
                 <div className="w-11 md:w-12 h-11 md:h-12 rounded-lg bg-white/60 flex items-center justify-center mb-4 md:mb-5 group-hover:bg-white transition-colors">
                   <Icon className={color.split(" ")[2]} size={20} />
                 </div>
-                <h3 className="font-serif font-bold text-base md:text-lg text-foreground mb-2">{title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-3 md:mb-4">{desc}</p>
+                <h3 className="font-serif font-bold text-base md:text-lg text-foreground mb-2">
+                  {title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-3 md:mb-4">
+                  {desc}
+                </p>
                 <span className="inline-block text-[10px] font-bold uppercase tracking-widest bg-white/70 border border-white px-2 py-1 rounded text-muted-foreground">
                   {status}
                 </span>
@@ -171,13 +237,20 @@ export default function Media() {
       </section>
 
       {/* PRE-EVENT PHOTO GALLERY */}
-      <section id="photo-gallery" className="py-10 md:pb-18 md:pt-12 bg-secondary/20">
+      <section
+        id="photo-gallery"
+        className="py-10 md:pb-18 md:pt-12 bg-secondary/20"
+      >
         <div className="container mx-auto px-4">
           <motion.div {...fadeUp} className="mb-8 md:mb-12">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 md:gap-4 mb-2">
               <div>
-                <p className="text-primary font-bold uppercase tracking-widest text-sm mb-3">Photo Gallery</p>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Pre-Event Meeting</h2>
+                <p className="text-primary font-bold uppercase tracking-widest text-sm mb-3">
+                  Photo Gallery
+                </p>
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
+                  Pre-Event Meeting
+                </h2>
               </div>
               <span className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest px-3 py-2 rounded-full self-start sm:self-auto">
                 <span className="w-2 h-2 rounded-full bg-primary" />
@@ -186,7 +259,9 @@ export default function Media() {
             </div>
             <div className="w-16 h-1 bg-primary mb-4 md:mb-5" />
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl">
-              Workshop Planning Consortium dine in pre-event briefing in Accra — national and international partners convening ahead of the First National Stakeholder Consultation.
+              Workshop Planning Consortium dine in pre-event briefing in Accra —
+              national and international partners convening ahead of the First
+              National Stakeholder Consultation.
             </p>
           </motion.div>
 
@@ -211,13 +286,26 @@ export default function Media() {
                 />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-end">
                   <div className="w-full p-3 md:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-white text-xs font-medium leading-snug line-clamp-2">{photo.caption}</p>
+                    <p className="text-white text-xs font-medium leading-snug line-clamp-2">
+                      {photo.caption}
+                    </p>
                   </div>
                 </div>
                 <div className="absolute top-2 md:top-3 right-2 md:right-3 w-7 md:w-8 h-7 md:h-8 bg-white/20 backdrop-blur rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="15 3 21 3 21 9" /><polyline points="9 21 3 21 3 15" />
-                    <line x1="21" y1="3" x2="14" y2="10" /><line x1="3" y1="21" x2="10" y2="14" />
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="15 3 21 3 21 9" />
+                    <polyline points="9 21 3 21 3 15" />
+                    <line x1="21" y1="3" x2="14" y2="10" />
+                    <line x1="3" y1="21" x2="10" y2="14" />
                   </svg>
                 </div>
               </motion.button>
@@ -288,11 +376,17 @@ export default function Media() {
                     key={i}
                     onClick={() => setLightbox(i)}
                     className={`w-10 md:w-12 h-7 md:h-9 rounded overflow-hidden flex-shrink-0 transition-all ${
-                      i === lightbox ? "ring-2 ring-white scale-110" : "opacity-50 hover:opacity-80"
+                      i === lightbox
+                        ? "ring-2 ring-white scale-110"
+                        : "opacity-50 hover:opacity-80"
                     }`}
                     data-testid={`button-lightbox-thumb-${i}`}
                   >
-                    <img src={photo.src} alt="" className="w-full h-full object-cover" />
+                    <img
+                      src={photo.src}
+                      alt=""
+                      className="w-full h-full object-cover"
+                    />
                   </button>
                 ))}
               </div>
@@ -305,30 +399,54 @@ export default function Media() {
       <section className="py-14 md:py-24 bg-secondary/20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <motion.div {...fadeUp} className="bg-primary rounded-2xl p-7 md:p-10 text-primary-foreground relative overflow-hidden">
+            <motion.div
+              {...fadeUp}
+              className="bg-primary rounded-2xl p-7 md:p-10 text-primary-foreground relative overflow-hidden"
+            >
               <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-bl-[120px]" />
               <div className="relative z-10">
-                <p className="text-accent font-bold uppercase tracking-widest text-xs mb-3">Media Enquiries</p>
-                <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 md:mb-4">Press & Media Contact</h2>
+                <p className="text-accent font-bold uppercase tracking-widest text-xs mb-3">
+                  Media Enquiries
+                </p>
+                <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 md:mb-4">
+                  Press & Media Contact
+                </h2>
                 <p className="text-primary-foreground/80 leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
-                  For all press enquiries, interview requests, and media accreditation, please contact the workshop secretariat directly.
+                  For all press enquiries, interview requests, and media
+                  accreditation, please contact the workshop secretariat
+                  directly.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                   <div>
-                    <p className="text-accent text-xs font-bold uppercase tracking-widest mb-1">Secretariat Email</p>
-                    <a href="mailto:aasante-poku@noguchi.ug.edu.gh" className="text-white font-medium hover:underline break-all text-sm md:text-base">
+                    <p className="text-accent text-xs font-bold uppercase tracking-widest mb-1">
+                      Secretariat Email
+                    </p>
+                    <a
+                      href="mailto:aasante-poku@noguchi.ug.edu.gh"
+                      className="text-white font-medium hover:underline break-all text-sm md:text-base"
+                    >
                       aasante-poku@noguchi.ug.edu.gh
                     </a>
                   </div>
                   <div>
-                    <p className="text-accent text-xs font-bold uppercase tracking-widest mb-1">Telephone</p>
-                    <a href="tel:+233541359112" className="text-white font-medium hover:underline text-sm md:text-base">
+                    <p className="text-accent text-xs font-bold uppercase tracking-widest mb-1">
+                      Telephone
+                    </p>
+                    <a
+                      href="tel:+233541359112"
+                      className="text-white font-medium hover:underline text-sm md:text-base"
+                    >
                       +233-541-359-112
                     </a>
                   </div>
                   <div>
-                    <p className="text-accent text-xs font-bold uppercase tracking-widest mb-1">Co-Chair Email</p>
-                    <a href="mailto:hmavedzi@bu.edu" className="text-white font-medium hover:underline break-all text-sm md:text-base">
+                    <p className="text-accent text-xs font-bold uppercase tracking-widest mb-1">
+                      Co-Chair Email
+                    </p>
+                    <a
+                      href="mailto:hmavedzi@bu.edu"
+                      className="text-white font-medium hover:underline break-all text-sm md:text-base"
+                    >
                       hmavedzi@bu.edu
                     </a>
                   </div>

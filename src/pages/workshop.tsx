@@ -12,6 +12,12 @@ import {
 } from "lucide-react";
 import chairAdwoa from "@assets/co-chair-adwoa.jpeg";
 import chairBernard from "@assets/co-chair-bernard.jpeg";
+import speakerMeredith from "@assets/speaker-meredith.jpeg";
+import speakerSeth from "@assets/speaker-seth.png";
+import logoNoguchi from "@assets/noguchi-nmimr_1781523740609.jpg";
+import logoUG from "@assets/university-of-ghana_1781523740610.jpg";
+import logoBU from "@assets/boston-university_1781523740608.jpg";
+import logoUNICEF from "@assets/unicef.png";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -42,25 +48,31 @@ const outcomes = [
 
 const keynotes = [
   {
+    photo: speakerSeth,
+    name: "Dr. Seth Adu-Afarwuah",
     role: "Keynote Speaker",
-    tag: "Policy & Governance",
-    org: "Ministry of Health, Republic of Ghana",
-    bgColor: "bg-red-50",
+    tag: "Nutrition Science & Research",
+    org: "Department of Nutrition and Food Science, University of Ghana",
+    bgColor: "bg-emerald-50",
     accentColor: "border-primary/30",
     labelColor: "text-primary",
   },
   {
+    photo: chairBernard,
+    name: "Dr. Bernard Ziem",
     role: "Keynote Speaker",
     tag: "TB Programme Leadership",
-    org: "Ghana Health Service / NTCP",
+    org: "National TB Control Programme, Ghana Health Service",
     bgColor: "bg-amber-50",
     accentColor: "border-amber-300/50",
     labelColor: "text-amber-700",
   },
   {
+    photo: speakerMeredith,
+    name: "Dr. Meredith Brooks",
     role: "Keynote Speaker",
-    tag: "Nutrition Science & Research",
-    org: "Boston University Global Health Nutrition Lab",
+    tag: "Global Health Nutrition",
+    org: "Boston University School of Public Health",
     bgColor: "bg-blue-50",
     accentColor: "border-blue-300/50",
     labelColor: "text-blue-700",
@@ -69,19 +81,25 @@ const keynotes = [
 
 const panellists = [
   {
-    role: "Panellist",
+    logo: logoNoguchi,
     tag: "Research",
     org: "Noguchi Memorial Institute for Medical Research",
   },
-  { role: "Panellist", tag: "Academia", org: "University of Ghana" },
-  { role: "Panellist", tag: "TB Research", org: "Boston University TIARA" },
-  { role: "Panellist", tag: "Nutrition", org: "UNICEF Ghana" },
+  { logo: logoUG, tag: "Academia", org: "University of Ghana" },
+  { logo: logoBU, tag: "TB Research", org: "Boston University TIARA" },
+  { logo: logoUNICEF, tag: "UN Development Partner", org: "UNICEF Ghana" },
   {
-    role: "Panellist",
+    logo: null,
+    logoLabel: "Global Fund",
     tag: "Development Partnerships",
     org: "Global Fund Country Office",
   },
-  { role: "Panellist", tag: "Health Systems", org: "To Be Announced" },
+  // {
+  //   logo: null,
+  //   logoLabel: "TBA",
+  //   tag: "Health Systems",
+  //   org: "To Be Announced",
+  // },
 ];
 
 const chairs = [
@@ -514,8 +532,9 @@ export default function Workshop() {
 
           <motion.div
             {...fadeUp}
-            className="max-w-xl mx-auto mb-10 md:mb-16 flex items-center gap-3 bg-accent/10 border border-accent/30 rounded-xl px-5 py-3 justify-center"
+            className="max-w-xl mx-auto mb-10 md:mb-16 items-center gap-3 bg-accent/10 border border-accent/30 rounded-xl px-5 py-3 justify-center hidden"
           >
+            {/* flex */}
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse flex-shrink-0" />
             <p className="text-sm font-semibold text-foreground">
               Full speaker list to be announced. Confirmed names will appear
@@ -545,24 +564,12 @@ export default function Workshop() {
                   transition={{ delay: i * 0.1, duration: 0.6 }}
                   className={`${speaker.bgColor} rounded-2xl p-5 md:p-6 border-2 ${speaker.accentColor} group hover:shadow-xl transition-all`}
                 >
-                  <div className="w-20 md:w-24 h-20 md:h-24 rounded-full bg-white border-2 border-dashed border-primary/25 flex flex-col items-center justify-center mx-auto mb-4 md:mb-5 group-hover:border-primary/50 transition-colors">
-                    <svg
-                      width="26"
-                      height="26"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-muted-foreground/30 mb-0.5"
-                    >
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                      <circle cx="12" cy="7" r="4" />
-                    </svg>
-                    <span className="text-[9px] font-bold uppercase tracking-tighter text-muted-foreground/40">
-                      Photo
-                    </span>
+                  <div className="w-20 md:w-24 h-20 md:h-24 rounded-full overflow-hidden border-2 border-white shadow-md mx-auto mb-4 md:mb-5">
+                    <img
+                      src={speaker.photo}
+                      alt={speaker.name}
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
 
                   <div className="text-center mb-3">
@@ -574,8 +581,9 @@ export default function Workshop() {
                   </div>
 
                   <div className="text-center mb-1">
-                    <div className="h-5 w-40 bg-white/60 rounded mx-auto mb-2 animate-pulse" />
-                    <div className="h-3.5 w-28 bg-white/40 rounded mx-auto" />
+                    <p className="font-serif font-bold text-foreground text-base leading-snug">
+                      {speaker.name}
+                    </p>
                   </div>
 
                   <div className="mt-4 pt-4 border-t border-white/40 text-center space-y-1">
@@ -613,26 +621,18 @@ export default function Workshop() {
                   transition={{ delay: i * 0.07, duration: 0.5 }}
                   className="bg-card border border-border rounded-xl p-3 md:p-4 flex flex-col items-center text-center gap-2 md:gap-3 hover:shadow-lg transition-all group"
                 >
-                  <div className="w-12 md:w-14 h-12 md:h-14 rounded-full bg-secondary border-2 border-dashed border-primary/20 flex flex-col items-center justify-center group-hover:border-primary/40 transition-colors flex-shrink-0">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-muted-foreground/30"
-                    >
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                      <circle cx="12" cy="7" r="4" />
-                    </svg>
-                  </div>
-
-                  <div className="w-full space-y-1">
-                    <div className="h-3 w-full bg-secondary rounded animate-pulse" />
-                    <div className="h-3 w-3/4 bg-secondary rounded animate-pulse mx-auto" />
+                  <div className="w-16 md:w-20 h-16 md:h-20 rounded-xl bg-white border border-border flex items-center justify-center overflow-hidden flex-shrink-0 group-hover:shadow-md transition-shadow p-1.5">
+                    {p.logo ? (
+                      <img
+                        src={p.logo}
+                        alt={p.org}
+                        className="w-full h-full object-contain"
+                      />
+                    ) : (
+                      <span className="text-[10px] font-bold text-center leading-tight text-muted-foreground px-1">
+                        {p.logoLabel}
+                      </span>
+                    )}
                   </div>
 
                   <span className="text-[9px] font-bold uppercase tracking-widest text-primary/70 bg-primary/5 px-2 py-0.5 rounded-full">

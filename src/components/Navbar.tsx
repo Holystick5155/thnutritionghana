@@ -24,11 +24,18 @@ export default function Navbar() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         {/* Ghana flag stripe */}
         <div className="flex w-full">
-          <div className="flex-1 h-[3px] bg-[#CE1126]" />
-          <div className="flex-1 h-[3px] bg-[#FCD116]" />
-          <div className="flex-1 h-[3px] bg-[#006B3F]" />
+          <div className="flex-1 h-[6px] bg-[#CE1126]" />
+          <div className="flex-1 h-[6px] bg-[#FCD116] flex items-center justify-center">
+            <span
+              className="text-black leading-none select-none"
+              style={{ fontSize: "5px", lineHeight: 1 }}
+            >
+              ★
+            </span>
+          </div>
+          <div className="flex-1 h-[6px] bg-[#006B3F]" />
         </div>
-        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-14 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" onClick={close} className="flex items-center gap-3">
             <LogoMark size={150} />
