@@ -17,7 +17,6 @@ import Admin from "@/pages/admin";
 const queryClient = new QueryClient();
 
 
-// Changed config user email
 
 function Router() {
   return (
