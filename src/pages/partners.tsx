@@ -27,6 +27,7 @@ const partners = [
     color: "bg-red-50 border-red-200",
     accent: "text-primary",
     logoBg: "bg-white",
+    website: "https://www.moh.gov.gh",
   },
   {
     logo: logoGHS,
@@ -37,6 +38,7 @@ const partners = [
     color: "bg-green-50 border-green-200",
     accent: "text-green-800",
     logoBg: "bg-white",
+    website: "https://www.ghs.gov.gh",
   },
   {
     logo: null,
@@ -48,6 +50,7 @@ const partners = [
     color: "bg-amber-50 border-amber-200",
     accent: "text-amber-800",
     logoBg: "bg-amber-50",
+    website: "https://www.ghs.gov.gh",
   },
   {
     logo: logoNoguchi,
@@ -58,6 +61,7 @@ const partners = [
     color: "bg-blue-50 border-blue-200",
     accent: "text-blue-800",
     logoBg: "bg-white",
+    website: "https://nmimr.ug.edu.gh",
   },
   {
     logo: logoUG,
@@ -68,6 +72,7 @@ const partners = [
     color: "bg-indigo-50 border-indigo-200",
     accent: "text-indigo-800",
     logoBg: "bg-white",
+    website: "https://www.ug.edu.gh",
   },
   {
     logo: logoBU,
@@ -79,6 +84,8 @@ const partners = [
     color: "bg-red-50 border-red-200",
     accent: "text-primary",
     logoBg: "bg-white",
+    website:
+      "https://www.bu.edu/sph/research/research-landing-page/tb-interdisciplinary-approach-to-research-alliance-tiara/",
   },
   {
     logo: logoBU,
@@ -89,6 +96,8 @@ const partners = [
     color: "bg-orange-50 border-orange-200",
     accent: "text-orange-800",
     logoBg: "bg-white",
+    website:
+      "https://www.bu.edu/sph/research/research-landing-page/global-health-nutrition-lab/",
   },
 ];
 
@@ -134,13 +143,16 @@ export default function Partners() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-8">
             {partners.map((partner, i) => (
-              <motion.div
+              <motion.a
                 key={i}
+                href={partner.website}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07, duration: 0.6 }}
-                className={`rounded-2xl border-2 p-6 md:p-8 ${partner.color} hover:shadow-xl transition-all group`}
+                className={`rounded-2xl border-2 p-6 md:p-8 ${partner.color} hover:shadow-xl transition-all group cursor-pointer block`}
               >
                 {/* Logo area */}
                 <div
@@ -166,10 +178,14 @@ export default function Partners() {
                   )}
                 </div>
 
-                <div className="space-y-2 mb-3 md:mb-4">
+                <div className="flex items-center justify-between mb-3 md:mb-4">
                   <span className="inline-block bg-white/80 text-xs font-bold uppercase tracking-widest px-2 py-1 rounded text-muted-foreground">
                     {partner.country}
                   </span>
+                  <ExternalLink
+                    size={14}
+                    className="text-muted-foreground/40 group-hover:text-muted-foreground transition-colors"
+                  />
                 </div>
 
                 <h3
@@ -185,7 +201,7 @@ export default function Partners() {
                 <p className="text-muted-foreground text-sm leading-relaxed mt-2 md:mt-3">
                   {partner.desc}
                 </p>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>

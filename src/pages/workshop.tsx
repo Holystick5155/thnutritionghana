@@ -50,7 +50,7 @@ const outcomes = [
 const keynotes = [
   {
     photo: speakerSeth,
-    name: "Dr. Seth Adu-Afarwuah",
+    name: "Prof. Seth Adu-Afarwuah",
     role: "Keynote Speaker",
     tag: "Nutrition Science & Research",
     org: "Department of Nutrition and Food Science, University of Ghana",
