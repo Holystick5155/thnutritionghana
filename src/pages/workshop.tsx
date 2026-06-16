@@ -18,6 +18,7 @@ import logoNoguchi from "@assets/noguchi-nmimr_1781523740609.jpg";
 import logoUG from "@assets/university-of-ghana_1781523740610.jpg";
 import logoBU from "@assets/boston-university_1781523740608.jpg";
 import logoUNICEF from "@assets/unicef.png";
+import workshopFlyer from "@assets/artwork.jpeg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -151,6 +152,79 @@ export default function Workshop() {
             <p className="text-white/70 text-lg md:text-xl font-light">
               Integrating Nutrition Support into Tuberculosis Services in Ghana
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* WORKSHOP FLYER */}
+      <section className="py-10 md:py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-4xl mx-auto"
+          >
+            <img
+              src={workshopFlyer}
+              alt="The 1st National Stakeholder Consultation and Co-Design Workshop on Integrating Nutrition into Tuberculosis Services in Ghana — 18 June 2026, Labadi Beach Hotel, Accra"
+              className="w-full rounded-2xl shadow-xl"
+            />
+            <div className="flex flex-col sm:flex-row gap-3 mt-5 justify-center">
+              <a
+                href={workshopFlyer}
+                download="TB-Nutrition-Ghana-Workshop-Flyer.jpg"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-semibold text-sm px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download Flyer
+              </a>
+              <button
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: "TB Nutrition Ghana — 18 June 2026",
+                      text: "The 1st National Stakeholder Consultation & Co-Design Workshop on Integrating Nutrition into Tuberculosis Services in Ghana. Thursday 18 June 2026, Labadi Beach Hotel, Accra.",
+                      url: window.location.href,
+                    });
+                  } else {
+                    navigator.clipboard.writeText(window.location.href);
+                  }
+                }}
+                className="inline-flex items-center justify-center gap-2 border border-primary text-primary font-semibold text-sm px-6 py-3 rounded-lg hover:bg-primary/5 transition-colors"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="18" cy="5" r="3" />
+                  <circle cx="6" cy="12" r="3" />
+                  <circle cx="18" cy="19" r="3" />
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                </svg>
+                Share Event
+              </button>
+            </div>
           </motion.div>
         </div>
       </section>
