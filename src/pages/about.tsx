@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useSEO } from "@/hooks/useSEO";
-import workshopFlyer from "@/assets/artwork.jpeg";
+import workshopFlyer from "@assets/artwork.jpeg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
