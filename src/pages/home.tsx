@@ -156,7 +156,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAgMGwyMCAyMGgtNDB6IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==')] opacity-100 bg-repeat-x bg-bottom"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/80"></div>
       </section>
 
       {/* PARTNER LOGO STRIP */}

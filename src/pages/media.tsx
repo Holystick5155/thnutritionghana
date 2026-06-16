@@ -261,7 +261,7 @@ export default function Media() {
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl">
               Workshop Planning Consortium dine in pre-event briefing in Accra —
               national and international partners convening ahead of the First
-              National Stakeholder Consultation.
+              National Stakeholder Workshop.
             </p>
           </motion.div>
 
