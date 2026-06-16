@@ -61,7 +61,7 @@ export default function Footer() {
               Powered by <span className="font-semibold text-white/50">CIVIQ REPUBLIQ&copy;</span>
             </p>
             <span className="hidden sm:block text-white/20 text-xs">·</span>
-            <p className="text-white/30 text-xs">
+            <p className="text-white/30 text-xs hidden">
               Built by{" "}
               <a
                 href="https://amenyuie-tamakloe-israel.vercel.app"
