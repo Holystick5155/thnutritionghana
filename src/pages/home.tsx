@@ -132,24 +132,24 @@ export default function Home() {
 
             <Countdown />
 
-            <div className="flex flex-wrap gap-3 md:gap-4 mt-2 md:mt-4">
-              <Link href="/register">
+            <div className="flex flex-wrap gap-3 md:gap-4 mt-4">
+              <Link href="/workshop">
                 <Button
                   size="lg"
                   className="bg-accent text-accent-foreground hover:bg-accent/90 h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-bold shadow-lg"
-                  data-testid="button-register-hero"
+                  data-testid="button-programme-hero"
                 >
-                  Register to Attend
+                  View Programme
                 </Button>
               </Link>
-              <Link href="/workshop">
+              <Link href="/about">
                 <Button
                   size="lg"
                   variant="outline"
                   className="h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-bold bg-transparent border-white text-white hover:bg-white/10"
-                  data-testid="button-programme-hero"
+                  data-testid="button-about-hero"
                 >
-                  View Programme
+                  About the Initiative
                 </Button>
               </Link>
             </div>
@@ -401,17 +401,18 @@ export default function Home() {
             Join the National Conversation
           </h2>
           <p className="text-base md:text-xl text-muted/80 mb-8 md:mb-12 font-light">
-            Be part of the First National Stakeholder Consultation & Co-Design
-            Workshop shaping the future of tuberculosis care in Ghana.
+            Explore the workshop programme, meet the speakers, and reach out to
+            the secretariat for any enquiries about the First National
+            Stakeholder Consultation & Co-Design Workshop.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/register">
+            <Link href="/workshop">
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground h-12 md:h-14 px-6 md:px-8 text-base md:text-lg font-bold"
-                data-testid="button-register-cta"
+                data-testid="button-programme-cta"
               >
-                Register Now
+                View Programme
                 <ArrowRight className="ml-2" size={20} />
               </Button>
             </Link>

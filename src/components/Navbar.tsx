@@ -66,7 +66,7 @@ export default function Navbar() {
             ))}
             <Link href="/register">
               <Button
-                className={`font-semibold shadow-sm ${
+                className={`hidden font-semibold shadow-sm ${
                   location === "/register"
                     ? "bg-primary/80 text-white"
                     : "bg-primary hover:bg-primary/90 text-white"

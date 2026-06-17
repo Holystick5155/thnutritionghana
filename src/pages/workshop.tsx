@@ -119,6 +119,14 @@ const chairs = [
     email: "bernard@ghs.gov.gh",
     photo: chairBernard,
   },
+  {
+    name: "Dr. Meredith Brooks",
+    credentials: null,
+    role: "Workshop Co-Chair",
+    org: "Boston University School of Public Health",
+    email: null,
+    photo: speakerMeredith,
+  },
 ];
 
 export default function Workshop() {
@@ -381,7 +389,7 @@ export default function Workshop() {
             <div className="w-16 h-1 bg-primary mx-auto" />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 max-w-4xl mx-auto">
             {chairs.map((chair, i) => (
               <motion.div
                 key={i}
