@@ -19,6 +19,7 @@ import img1 from "@assets/IMG_2183.JPG_1781479894394.jpeg";
 import img2 from "@assets/IMG_2184.JPG_1781479894393.jpeg";
 import img3 from "@assets/boston-team.jpeg";
 import img4 from "@assets/pre-team.jpeg";
+import img5 from "@assets/pre-event-meeting.jpg";
 
 const preEventPhotos = [
   {
@@ -40,6 +41,11 @@ const preEventPhotos = [
     src: img4,
     caption:
       "Picture taken after a pre-workshop event meeting with the Director of Public Health at the Ghana Health Service (GHS) — Dr. Franklin Asiedu-Bekoe (in smock), and the National TB Control Manager (Dr. Bernard Ziem).",
+  },
+  {
+    src: img5,
+    caption:
+      "Pre-Event Planning Meet up — Workshop Event Facilitators from CIVIQ REPUBLIQ meet with Workshop Team Leads.",
   },
 ];
 
