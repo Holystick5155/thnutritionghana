@@ -167,14 +167,14 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: links.length * 0.055, duration: 0.22 }}
-                  className="pt-3 mt-2 border-t"
+                  className="hidden pt-3 mt-2 border-t"
                 >
-                  <Link href="/register" onClick={close}>
+                  <Link href="/workshop" onClick={close}>
                     <Button
                       className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-5 text-base"
                       data-testid="button-register-mobile"
                     >
-                      Register for the Workshop
+                      Coming Workshop
                     </Button>
                   </Link>
                 </motion.div>
