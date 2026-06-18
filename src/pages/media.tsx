@@ -75,7 +75,7 @@ const resources = [
     icon: Video,
     title: "Video Library",
     desc: "Recordings of keynote addresses, panel discussions, and event highlights.",
-    status: "Coming Soon — Post Workshop",
+    status: "Now Available",
     color: "bg-blue-50 border-blue-100 text-blue-700",
   },
   {
@@ -144,6 +144,12 @@ export default function Media() {
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToVideoLibrary = () => {
+    document
+      .getElementById("video-library")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="w-full">
       {/* PAGE HEADER */}
@@ -176,17 +182,17 @@ export default function Media() {
       </section>
 
       {/* NOTICE BANNER */}
-      <div className="bg-accent/20 border-y border-accent/30 py-3 md:py-4">
+      <div className="bg-primary/10 border-y border-primary/20 py-3 md:py-4">
         <div className="container mx-auto px-4">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-center text-sm font-semibold text-foreground"
           >
-            <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse mr-2" />
-            The workshop takes place on <strong>18 June 2026</strong>. Media
-            resources will be published progressively before, during, and after
-            the event.
+            <span className="inline-block w-2 h-2 rounded-full bg-primary mr-2" />
+            The First National Stakeholder Consultation & Co-Design Workshop was
+            held on <strong>18 June 2026</strong> at Labadi Beach Hotel, Accra.
+            Resources are being published progressively below.
           </motion.p>
         </div>
       </div>
@@ -219,9 +225,13 @@ export default function Media() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className={`rounded-xl border-2 p-5 md:p-6 ${color.split(" ").slice(0, 2).join(" ")} hover:shadow-lg transition-all group ${title === "Photo Gallery" ? "cursor-pointer" : "cursor-default"}`}
+                className={`rounded-xl border-2 p-5 md:p-6 ${color.split(" ").slice(0, 2).join(" ")} hover:shadow-lg transition-all group ${title === "Photo Gallery" || title === "Video Library" ? "cursor-pointer" : "cursor-default"}`}
                 onClick={
-                  title === "Photo Gallery" ? scrollToGallery : undefined
+                  title === "Photo Gallery"
+                    ? scrollToGallery
+                    : title === "Video Library"
+                      ? scrollToVideoLibrary
+                      : undefined
                 }
               >
                 <div className="w-11 md:w-12 h-11 md:h-12 rounded-lg bg-white/60 flex items-center justify-center mb-4 md:mb-5 group-hover:bg-white transition-colors">
@@ -239,6 +249,32 @@ export default function Media() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FEATURED VIDEO */}
+      <section id="video-library" className="py-14 md:py-24 bg-foreground">
+        <div className="container mx-auto px-4">
+          <motion.div {...fadeUp} className="max-w-4xl mx-auto">
+            <div className="text-center mb-8 md:mb-10">
+              <p className="text-accent font-bold uppercase tracking-widest text-sm mb-3">
+                Video Library
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
+                1st National Stakeholder Consultation &amp; Co-Design Workshop
+              </h2>
+              <div className="w-16 h-1 bg-accent mx-auto" />
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video bg-black">
+              <iframe
+                src="https://www.youtube.com/embed/4WElhrkTq3A"
+                title="1st National Stakeholder Consultation and Co-Design Workshop"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 

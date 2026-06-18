@@ -57,9 +57,9 @@ export default function Home() {
             className="max-w-4xl"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur border border-white/20 rounded-full mb-6 md:mb-8">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-accent"></span>
               <span className="text-xs font-bold uppercase tracking-widest text-white/90">
-                First National Stakeholder Consultation
+                First National Stakeholder Consultation — 18 June 2026
               </span>
             </div>
 

@@ -56,9 +56,9 @@ export default function Countdown() {
   if (time.started) {
     return (
       <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 border border-accent/40 rounded-full">
-        <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+        <span className="w-2 h-2 rounded-full bg-accent" />
         <span className="text-sm font-bold text-white uppercase tracking-widest">
-          Event is underway
+          Workshop in Progress — 18 June 2026
         </span>
       </div>
     );
@@ -76,11 +76,17 @@ export default function Countdown() {
       </p>
       <div className="flex items-start gap-3">
         <Digit value={time.days} label="Days" />
-        <span className="font-serif font-bold text-2xl text-white/40 mt-3">:</span>
+        <span className="font-serif font-bold text-2xl text-white/40 mt-3">
+          :
+        </span>
         <Digit value={time.hours} label="Hours" />
-        <span className="font-serif font-bold text-2xl text-white/40 mt-3">:</span>
+        <span className="font-serif font-bold text-2xl text-white/40 mt-3">
+          :
+        </span>
         <Digit value={time.minutes} label="Mins" />
-        <span className="font-serif font-bold text-2xl text-white/40 mt-3">:</span>
+        <span className="font-serif font-bold text-2xl text-white/40 mt-3">
+          :
+        </span>
         <Digit value={time.seconds} label="Secs" />
       </div>
     </motion.div>

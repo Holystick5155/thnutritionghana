@@ -128,7 +128,7 @@ const chairs = [
     email: null,
     photo: speakerMeredith,
   },
-   {
+  {
     name: "Dr. Hayford M. Avedzi",
     credentials: null,
     role: "Workshop Co-Chair / Clinical Assistant Professor",
@@ -691,7 +691,7 @@ export default function Workshop() {
           </div>
 
           {/* PANELLISTS */}
-          <div>
+          <div className="mb-10 md:mb-16">
             <div className="flex items-center gap-3 mb-6 md:mb-8">
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                 <LayoutGrid className="text-primary" size={18} />
@@ -735,6 +735,44 @@ export default function Workshop() {
                 </motion.div>
               ))}
             </div>
+          </div>
+
+          {/* WORKSHOP VIDEO */}
+          <div className="mb-12 md:mb-16">
+            <div className="flex items-center gap-3 mb-6 md:mb-8">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-primary"
+                >
+                  <polygon points="23 7 16 12 23 17 23 7" />
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                </svg>
+              </div>
+              <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground">
+                Workshop Video
+              </h3>
+              <div className="flex-1 h-px bg-border ml-2" />
+            </div>
+            <motion.div
+              {...fadeUp}
+              className="rounded-2xl overflow-hidden shadow-xl aspect-video bg-black"
+            >
+              <iframe
+                src="https://www.youtube.com/embed/4WElhrkTq3A"
+                title="1st National Stakeholder Consultation and Co-Design Workshop"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
