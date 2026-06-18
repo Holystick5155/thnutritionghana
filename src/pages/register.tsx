@@ -9,7 +9,7 @@ import { Calendar, MapPin, Clock, ExternalLink } from "lucide-react";
 //           without touching this file.
 // ─────────────────────────────────────────────────────────────────
 const HARDCODED_EMBED_URL = "";
-const HARDCODED_DIRECT_URL = "";
+const HARDCODED_DIRECT_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeu5vBPTXTm87_cJqTujY4lfUdkPdi1ig8q9njMzP-Qjs-loA/viewform?usp=publish-editor";
 
 const STORAGE_EMBED = "tbng_form_embed_url";
 const STORAGE_DIRECT = "tbng_form_direct_url";
@@ -35,7 +35,7 @@ export default function Register() {
     }
   }, []);
 
-  const hasForm = Boolean(embedUrl);
+  const hasForm = Boolean(embedUrl || directUrl);
 
   return (
     <div className="w-full">
@@ -117,7 +117,7 @@ export default function Register() {
                   )}
                 </div>
                 <iframe
-                  src={embedUrl}
+                  src={embedUrl || directUrl}
                   title="TB Nutrition Ghana — Workshop Registration"
                   className="w-full border-0"
                   style={{ height: "900px" }}

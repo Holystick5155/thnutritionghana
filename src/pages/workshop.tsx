@@ -13,6 +13,7 @@ import {
 import chairAdwoa from "@assets/co-chair-adwoa.jpeg";
 import chairBernard from "@assets/co-chair-bernard.jpeg";
 import speakerMeredith from "@assets/speaker-meredith.jpeg";
+import chairAvedzi from "@assets/avedzi.jpeg";
 import speakerSeth from "@assets/speaker-seth.png";
 import logoNoguchi from "@assets/noguchi-nmimr_1781523740609.jpg";
 import logoUG from "@assets/university-of-ghana_1781523740610.jpg";
@@ -126,6 +127,14 @@ const chairs = [
     org: "Boston University School of Public Health",
     email: null,
     photo: speakerMeredith,
+  },
+   {
+    name: "Dr. Hayford M. Avedzi",
+    credentials: null,
+    role: "Workshop Co-Chair / Clinical Assistant Professor",
+    org: "Boston University Sargent College of Health & Rehabilitation Sciences",
+    email: "hmavedzi@bu.edu",
+    photo: chairAvedzi,
   },
 ];
 
@@ -389,7 +398,7 @@ export default function Workshop() {
             <div className="w-16 h-1 bg-primary mx-auto" />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-8 max-w-5xl mx-auto">
             {chairs.map((chair, i) => (
               <motion.div
                 key={i}
