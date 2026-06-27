@@ -58,7 +58,7 @@ export default function Countdown() {
       <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 border border-accent/40 rounded-full">
         <span className="w-2 h-2 rounded-full bg-accent" />
         <span className="text-sm font-bold text-white uppercase tracking-widest">
-          Workshop in Progress — 18 June 2026
+          Workshop concluded — 18 June 2026
         </span>
       </div>
     );

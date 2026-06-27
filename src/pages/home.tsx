@@ -133,26 +133,16 @@ export default function Home() {
             <Countdown />
 
             <div className="flex flex-wrap gap-3 md:gap-4 mt-4">
-              <Link href="/register">
+              <Link href="/media">
                 <Button
                   size="lg"
                   className="bg-accent text-accent-foreground hover:bg-accent/90 h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-bold shadow-lg"
-                  data-testid="button-programme-hero"
+                  data-testid="button-media-hero"
                 >
-                  Register
+                  View Media
                 </Button>
               </Link>
-              <Link href="/workshop">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-bold bg-transparent border-white text-white hover:bg-white/10"
-                  data-testid="button-about-hero"
-                >
-                  View Programme
-                </Button>
-              </Link>
-              {/* <Link href="/about">
+              <Link href="/about">
                 <Button
                   size="lg"
                   variant="outline"
@@ -161,7 +151,7 @@ export default function Home() {
                 >
                   About the Initiative
                 </Button>
-              </Link> */}
+              </Link>
             </div>
           </motion.div>
         </div>
