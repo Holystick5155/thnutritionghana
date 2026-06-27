@@ -64,18 +64,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/register">
-              <Button
-                className={`font-semibold shadow-sm ${
-                  location === "/register"
-                    ? "bg-primary/80 text-white"
-                    : "bg-primary hover:bg-primary/90 text-white"
-                }`}
-                data-testid="button-register-nav"
-              >
-                Register
-              </Button>
-            </Link>
+            {/* Register button removed — workshop concluded */}
           </nav>
 
           {/* Hamburger */}
@@ -174,7 +163,7 @@ export default function Navbar() {
                       className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-5 text-base"
                       data-testid="button-register-mobile"
                     >
-                      Register for the Workshop
+                      View Workshop
                     </Button>
                   </Link>
                 </motion.div>
