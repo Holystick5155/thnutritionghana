@@ -97,7 +97,7 @@ const partners = [
     accent: "text-orange-800",
     logoBg: "bg-white",
     website:
-      "https://www.bu.edu/sph/research/research-landing-page/global-health-nutrition-lab/",
+      "https://sites.bu.edu/globalnutrition/our-team/",
   },
 ];
 
